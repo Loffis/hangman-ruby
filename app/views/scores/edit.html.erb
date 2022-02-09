@@ -1,6 +1,10 @@
-<h1>Editing Score</h1>
+<h1>Editing score</h1>
 
-<%= render 'form', score: @score %>
+<%= render "form", score: @score %>
 
-<%= link_to 'Show', @score %> |
-<%= link_to 'Back', scores_path %>
+<br>
+
+<div>
+  <%= link_to "Show this score", @score %> |
+  <%= link_to "Back to scores", scores_path %>
+</div>

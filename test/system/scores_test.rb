@@ -10,9 +10,9 @@ class ScoresTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Scores"
   end
 
-  test "creating a Score" do
+  test "should create score" do
     visit scores_url
-    click_on "New Score"
+    click_on "New score"
 
     fill_in "Points", with: @score.points
     fill_in "User", with: @score.user_id
@@ -22,9 +22,9 @@ class ScoresTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "updating a Score" do
-    visit scores_url
-    click_on "Edit", match: :first
+  test "should update Score" do
+    visit score_url(@score)
+    click_on "Edit this score", match: :first
 
     fill_in "Points", with: @score.points
     fill_in "User", with: @score.user_id
@@ -34,11 +34,9 @@ class ScoresTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "destroying a Score" do
-    visit scores_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  test "should destroy Score" do
+    visit score_url(@score)
+    click_on "Destroy this score", match: :first
 
     assert_text "Score was successfully destroyed"
   end

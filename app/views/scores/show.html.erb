@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
-<p>
-  <strong>Points:</strong>
-  <%= @score.points %>
-</p>
+<%= render @score %>
 
-<p>
-  <strong>User:</strong>
-  <%= @score.user_id %>
-</p>
+<div>
+  <%= link_to "Edit this score", edit_score_path(@score) %> |
+  <%= link_to "Back to scores", scores_path %>
 
-<%= link_to 'Edit', edit_score_path(@score) %> |
-<%= link_to 'Back', scores_path %>
+  <%= button_to "Destroy this score", @score, method: :delete %>
+</div>

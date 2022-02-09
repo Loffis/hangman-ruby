@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ScoresControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class ScoresControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create score" do
-    assert_difference('Score.count') do
+    assert_difference("Score.count") do
       post scores_url, params: { score: { points: @score.points, user_id: @score.user_id } }
     end
 
@@ -39,7 +39,7 @@ class ScoresControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy score" do
-    assert_difference('Score.count', -1) do
+    assert_difference("Score.count", -1) do
       delete score_url(@score)
     end
 

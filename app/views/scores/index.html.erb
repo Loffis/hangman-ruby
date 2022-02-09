@@ -1,29 +1,14 @@
-<p id="notice"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <h1>Scores</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Points</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="scores">
+  <% @scores.each do |score| %>
+    <%= render score %>
+    <p>
+      <%= link_to "Show this score", score %>
+    </p>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @scores.each do |score| %>
-      <tr>
-        <td><%= score.points %></td>
-        <td><%= score.user_id %></td>
-        <td><%= link_to 'Show', score %></td>
-        <td><%= link_to 'Edit', edit_score_path(score) %></td>
-        <td><%= link_to 'Destroy', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Score', new_score_path %>
+<%= link_to "New score", new_score_path %>

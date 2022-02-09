@@ -1,27 +1,27 @@
-<%= form_with(model: score, local: true) do |form| %>
+<%= form_with(model: score) do |form| %>
   <% if score.errors.any? %>
-    <div id="error_explanation">
+    <div style="color: red">
       <h2><%= pluralize(score.errors.count, "error") %> prohibited this score from being saved:</h2>
 
       <ul>
-        <% score.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <% score.errors.each do |error| %>
+          <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :points %>
-    <%= form.text_field :points %>
+  <div>
+    <%= form.label :points, style: "display: block" %>
+    <%= form.number_field :points %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
     <%= form.text_field :user_id %>
   </div>
 
-  <div class="actions">
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
