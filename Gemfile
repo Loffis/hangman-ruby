@@ -22,6 +22,13 @@ gem 'puma', '~> 5.0'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 
+gem 'rubocop', require: false
+gem 'rubocop-performance', '~> 1.10'
+gem 'rubocop-rails', '~> 2.5.2', '>= 2.5.2'
+gem 'rubocop-rspec'
+
+gem 'sass-rails'
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 
